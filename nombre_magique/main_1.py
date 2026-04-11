@@ -8,9 +8,11 @@ def demander_nombre(nb_min, nb_max):
                 
         except :
             print("Erreur: Vous devez entrer un nombre. Réessayer.")
+            
         else:
             if nb_int < nb_min or nb_int > nb_max:
                 print(f"Vous ne pouvez choisir que des nombres compris entre {nb_min} et {nb_max}.")
+                
             else:
                 return nb_int   
 
@@ -20,19 +22,27 @@ nb_min = 1
 nb_max = 10
 nb_mag = random.randint(nb_min, nb_max)
 
-
+nb_vies = 4
+vies = nb_vies
 
 
 nb_user = 0
-while not nb_user == nb_mag:
+while not nb_user == nb_mag and vies > 0:
+    print(f"Il vous reste {vies} vies !")
     nb_user = demander_nombre(nb_min, nb_max)
 
     if nb_user == nb_mag:
-        print('Vous avez gagné !')
+        print(f"Bravo!! Le nombre magique est bien : {nb_mag} ")
     elif nb_user < nb_mag:
+        vies -= 1
         print("Le nombre magique est plus grand !!")
+        
     else:
+        vies -= 1
         print("Le nombre magique est plus petit !!")
+        
+print("Vous avez perdu!")
+print(f"Le nombre magique était : {nb_mag}")
     
 
 
