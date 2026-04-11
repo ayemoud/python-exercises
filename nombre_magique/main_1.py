@@ -1,5 +1,5 @@
-# AVEC LA BOUCLE WHI
 
+import random
 def demander_nombre(nb_min, nb_max):
     while True:
         nb_str = input(f"Quel est le nombre magique entre {nb_min} et {nb_max} : ")
@@ -18,7 +18,7 @@ def demander_nombre(nb_min, nb_max):
 
 nb_min = 1
 nb_max = 10
-nb_mag = 5
+nb_mag = random.randint(nb_min, nb_max)
 
 
 
