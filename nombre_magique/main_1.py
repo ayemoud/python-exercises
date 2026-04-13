@@ -23,27 +23,28 @@ nb_max = 10
 nb_mag = random.randint(nb_min, nb_max)
 
 nb_vies = 4
-vies = nb_vies
 
 
-nb_user = 0
-while not nb_user == nb_mag and vies > 0:
-    print(f"Il vous reste {vies} vies !")
+for i in range(0, nb_vies):
+    vies = nb_vies - i
+    print(f"Il vous reste {vies} vies! ")
     nb_user = demander_nombre(nb_min, nb_max)
 
     if nb_user == nb_mag:
         print(f"Bravo!! Le nombre magique est bien : {nb_mag} ")
+        break
+        
     elif nb_user < nb_mag:
-        vies -= 1
+        
         print("Le nombre magique est plus grand !!")
         
     else:
-        vies -= 1
-        print("Le nombre magique est plus petit !!")
         
-print("Vous avez perdu!")
-print(f"Le nombre magique était : {nb_mag}")
-    
+        print("Le nombre magique est plus petit !!")
+else:      
+    print("Vous avez perdu!")
+    print(f"Le nombre magique était : {nb_mag}")
+        
 
 
 
