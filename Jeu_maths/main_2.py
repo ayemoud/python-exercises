@@ -12,15 +12,19 @@ def poser_question():
     reponse_int = int(reponse_str)
     return reponse_int,a + b
 
-
+nb_points = 0
 for i in range(0, nb_questions):
+    print()
     print(f"Question n°{i + 1} sur 4")
     reponse_int, reponse_correcte = poser_question()
 
     if reponse_int == reponse_correcte :
-        print("Bonne reponSe")
-        break
+        print("Bonne reponse")
+        nb_points += 1
+        
+        
     else:
         print("Mauvaise reponse")
-    
+        nb_points = max(0, nb_points -1)
 
+print(f"Votre note est de {nb_points} / {nb_questions}")
