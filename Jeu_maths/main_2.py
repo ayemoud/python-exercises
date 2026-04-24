@@ -38,7 +38,7 @@ elif moyenne < nb_points:
 elif moyenne == nb_points:
     print("Peut faire mieux !")
 else:
-    print("Dommage")
+    print("Continue, tu peux t'améliorer !")
 
 
 
