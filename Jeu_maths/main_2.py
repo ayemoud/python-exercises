@@ -25,6 +25,20 @@ for i in range(0, nb_questions):
         
     else:
         print("Mauvaise reponse")
-        nb_points = max(0, nb_points -1)
+        nb_points = max(0, nb_points)
+
 
 print(f"Votre note est de {nb_points} / {nb_questions}")
+
+moyenne = int(nb_questions / 2)
+if nb_points == nb_questions:
+    print("Excellent!")
+elif moyenne < nb_points:
+    print("Bien!")
+elif moyenne == nb_points:
+    print("Peut faire mieux !")
+else:
+    print("Dommage")
+
+
+
